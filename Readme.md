@@ -7,9 +7,11 @@ Symbols
 
 Dependencies installation
 ---
-Initialize Pipfile
+Dependencies Installation
 > python3 -m pipenv install
 
+Manual dependencies Installation
+---
 Install pytest dependency
 > python3 -m pipenv install pytest
 
