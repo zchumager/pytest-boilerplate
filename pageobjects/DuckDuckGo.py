@@ -2,7 +2,7 @@ from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.common.by import By
 from pageobjects.PageObject import PageObject
-
+import config
 
 class DuckDuckGO(PageObject):
     def __init__(self, driver):
@@ -12,9 +12,9 @@ class DuckDuckGO(PageObject):
         self.button_id = (By.ID, "search_button_homepage")
 
     def type_search_expression(self, text: str):
-        WebDriverWait(self.driver, 10)\
+        WebDriverWait(self.driver, config.DEFAULT_WAIT_TIME)\
             .until(expected_conditions.visibility_of_element_located(self.input_id)).send_keys(text)
 
     def click_search_button(self):
-        WebDriverWait(self.driver, 10)\
+        WebDriverWait(self.driver, config.DEFAULT_WAIT_TIME)\
             .until(expected_conditions.element_to_be_clickable(self.button_id)).click()

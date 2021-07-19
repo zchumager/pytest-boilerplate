@@ -1,4 +1,5 @@
 import pytest
+import config
 from selenium import webdriver
 from webdriver_manager.chrome import ChromeDriverManager
 
@@ -13,7 +14,7 @@ def driver():
     _driver = webdriver.Chrome(ChromeDriverManager().install())
 
     # implicit wait just works for first page loading
-    _driver.implicitly_wait(10)
+    _driver.implicitly_wait(config.DEFAULT_WAIT_TIME)
 
     # returning driver for each test
     yield _driver
