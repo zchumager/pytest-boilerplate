@@ -4,6 +4,7 @@ from selenium.webdriver.common.by import By
 from pageobjects.PageObject import PageObject
 import config
 
+
 class DuckDuckGO(PageObject):
     def __init__(self, driver):
         super().__init__(driver)

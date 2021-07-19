@@ -28,3 +28,7 @@ Pycharm Configuration
 File &#8594; Settings &#8594; Tools &#8594;
 Python Integrated Tools &#8594; Testing &#8594;
 Default test runner &#8594; pytest
+
+Run pytest on terminal
+---
+pytest -v --junitxml="result.xml"
