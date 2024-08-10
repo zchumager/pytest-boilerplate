@@ -1,13 +1,11 @@
+from conftest import driver
 from pageobjects.DuckDuckGo import DuckDuckGO
 
 
 def test_search_expression(driver):
-    '''
-    :param driver: funtion present in conftest.py which return an instance of selenium web driver with yield
-    :return: None
-    '''
     search_expression = "python3"
-    obj = DuckDuckGO(driver)
-    obj.type_search_expression(search_expression)
-    obj.click_search_button()
-    assert search_expression in obj.get_current_url()
+    duck_duck_go = DuckDuckGO(driver)
+    duck_duck_go.type_search_expression(search_expression)
+    duck_duck_go.click_search_button()
+
+    assert search_expression in duck_duck_go.get_current_url()

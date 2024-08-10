@@ -9,8 +9,8 @@ class DuckDuckGO(PageObject):
     def __init__(self, driver):
         super().__init__(driver)
         self.driver.get("https://duckduckgo.com/")
-        self.input_id = (By.ID, "search_form_input_homepage")
-        self.button_id = (By.ID, "search_button_homepage")
+        self.input_id = (By.ID, 'searchbox_input')
+        self.button_id = (By.CSS_SELECTOR, '[type="submit"]')
 
     def type_search_expression(self, text: str):
         WebDriverWait(self.driver, config.DEFAULT_WAIT_TIME)\
